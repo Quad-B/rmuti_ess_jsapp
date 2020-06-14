@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html { 
+            overflow: auto; 
+        } 
+          
+        html, 
+        body, 
+        div, 
+        iframe { 
+            margin: 0px; 
+            padding: 0px; 
+            height: 100%; 
+            border: none; 
+        } 
+          
+        iframe { 
+            display: block; 
+            width: 100%; 
+            border: none; 
+            overflow-y: auto; 
+            overflow-x: hidden; 
+        }
+    </style>
+</head>
+<body>
+    <p id="demo" style="display: none;"></p>
+
+    <iframe src="https://ess.rmuti.ac.th/" id="frame" frameborder="0" style="border: 0; width: 100%; height: 100%;">
+    </iframe>
+
+    <script>
+        var x = document.getElementById("demo");
+
+        setTimeout(function(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+                alert("Geolocation is not supported by this browser.");
+                x.innerHTML = "Geolocation is not supported by this browser."
+            }
+
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log('Pos: ', position);
+                }, function (error) {
+                    console.log('Err', error);
+                });
+        },5000);
+
+        function showPosition(position) {
+  
+            $.getJSON("https://api.longdo.com/map/services/address?lon="+position.coords.longitude+"&lat="+position.coords.latitude+"&noelevation=1&key=dd60afa68aa84ff6eb5e4da05044eea4",function(json)
+                {     
+                    x.innerHTML = position.coords.longitude;
+    
+                    var thing = json.province;
+                    // x.innerHTML = thing;
+
+    
+                    if (thing == "จ.ขอนแก่น") {
+                        document.getElementById('frame').src = "https://khonkaen-ess.rmuti.ac.th/Rmuti/Registration/";
+                    }
+    
+                    if (thing == "จ.นครราชสีมา") {
+                        document.getElementById('frame').src = "https://ess.rmuti.ac.th/Rmuti/Registration/";
+                    }
+    
+                    if (thing == "จ.สุรินทร์") {
+                        document.getElementById('frame').src = "https://ess.surin.rmuti.ac.th/Rmuti/Registration/";
+                    }
+    
+                    if (thing == "จ.สกลนคร") {
+                        document.getElementById('frame').src = "https://sakonnakhon-ess.rmuti.ac.th/Rmuti/Registration/";
+                    }
+
+                    document.getElementById('frame').src = "https://khonkaen-ess.rmuti.ac.th/Rmuti/Registration/";
+    
+                });
+  
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.1/d3.min.js"></script>
+</body>
+</html>
