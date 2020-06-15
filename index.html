@@ -61,25 +61,18 @@
                     var thing = json.province;
                     // x.innerHTML = thing;
 
-    
                     if (thing == "จ.ขอนแก่น") {
                         document.getElementById('frame').src = "https://khonkaen-ess.rmuti.ac.th/Rmuti/Registration/";
-                    }
-    
-                    if (thing == "จ.นครราชสีมา") {
+                    } else if (thing == "จ.นครราชสีมา") {
                         document.getElementById('frame').src = "https://ess.rmuti.ac.th/Rmuti/Registration/";
-                    }
-    
-                    if (thing == "จ.สุรินทร์") {
+                    } else if (thing == "จ.สุรินทร์") {
                         document.getElementById('frame').src = "https://ess.surin.rmuti.ac.th/Rmuti/Registration/";
-                    }
-    
-                    if (thing == "จ.สกลนคร") {
+                    } else if (thing == "จ.สกลนคร") {
                         document.getElementById('frame').src = "https://sakonnakhon-ess.rmuti.ac.th/Rmuti/Registration/";
+                    } else {
+                        document.getElementById('frame').src = "https://khonkaen-ess.rmuti.ac.th/Rmuti/Registration/";
                     }
 
-                    document.getElementById('frame').src = "https://khonkaen-ess.rmuti.ac.th/Rmuti/Registration/";
-    
                 });
   
         }
