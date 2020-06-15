@@ -45,11 +45,11 @@
                 x.innerHTML = "Geolocation is not supported by this browser."
             }
 
-            navigator.geolocation.getCurrentPosition(function (position) {
+            /* navigator.geolocation.getCurrentPosition(function (position) {
                 console.log('Pos: ', position);
                 }, function (error) {
                     console.log('Err', error);
-                });
+                }); */
         },5000);
 
         function showPosition(position) {
@@ -84,6 +84,7 @@
   
         }
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.1/d3.min.js"></script>
 </body>

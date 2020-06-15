@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 
-process.env.GOOGLE_API_KEY = 'AIzaSyBghBxjuHqUQPQvkywbGeVwgpfK7NWGqJ4';
+process.env.GOOGLE_API_KEY = 'AIzaSyAVWxasjlmckeIuYTYudCUPBZ7JkhaClUk';
 
 function createWindow () {
   // Create the browser window.
