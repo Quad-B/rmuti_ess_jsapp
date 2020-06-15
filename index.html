@@ -5,26 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html { 
-            overflow: auto; 
-        } 
-          
-        html, 
-        body, 
-        div, 
-        iframe { 
-            margin: 0px; 
-            padding: 0px; 
-            height: 100%; 
-            border: none; 
-        } 
-          
-        iframe { 
-            display: block; 
-            width: 100%; 
-            border: none; 
-            overflow-y: auto; 
-            overflow-x: hidden; 
+        .container-after-titlebar {
+            overflow: hidden !important; /* Hide scrollbars */
         }
     </style>
 </head>
@@ -52,6 +34,13 @@
                 }); */
         },5000);
 
+        const customTitlebar = require('custom-electron-titlebar');
+
+        let MyTitleBar = new customTitlebar.Titlebar({
+          backgroundColor: customTitlebar.Color.fromHex('#444'),
+          shadow: true
+        });
+
         function showPosition(position) {
   
             $.getJSON("https://api.longdo.com/map/services/address?lon="+position.coords.longitude+"&lat="+position.coords.latitude+"&noelevation=1&key=dd60afa68aa84ff6eb5e4da05044eea4",function(json)
@@ -63,19 +52,25 @@
 
                     if (thing == "จ.ขอนแก่น") {
                         document.getElementById('frame').src = "https://khonkaen-ess.rmuti.ac.th/Rmuti/Registration/";
+                        MyTitleBar.updateTitle('ESS วิทยาเขตขอนแก่น');
                     } else if (thing == "จ.นครราชสีมา") {
                         document.getElementById('frame').src = "https://ess.rmuti.ac.th/Rmuti/Registration/";
+                        MyTitleBar.updateTitle('ESS ศูนย์กลางมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน');
                     } else if (thing == "จ.สุรินทร์") {
                         document.getElementById('frame').src = "https://ess.surin.rmuti.ac.th/Rmuti/Registration/";
+                        MyTitleBar.updateTitle('ESS วิทยาเขตสุรินทร์');
                     } else if (thing == "จ.สกลนคร") {
                         document.getElementById('frame').src = "https://sakonnakhon-ess.rmuti.ac.th/Rmuti/Registration/";
+                        MyTitleBar.updateTitle('ESS วิทยาเขตสกลนคร');
                     } else {
                         document.getElementById('frame').src = "https://ess.rmuti.ac.th/";
+                        MyTitleBar.updateTitle('เว็บกลาง ESS');
                     }
 
                 });
   
         }
+
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
 

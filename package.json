@@ -1,6 +1,6 @@
 {
   "name": "rmuti_ess_jsapp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -17,11 +17,11 @@
     "url": "https://github.com/boyphongsakorn/rmuti_ess_jsapp/issues"
   },
   "build": {
-    "productName" : "RMUTI JSAPP",
+    "productName": "RMUTI JSAPP",
     "appId": "com.boyphongsakorn.rmuti_jsapp",
     "copyright": "copyright © 2020 Quad B Coder",
     "win": {
-      "publisherName" : "Quad B Coder",
+      "publisherName": "Quad B Coder",
       "target": [
         {
           "target": "nsis",
@@ -34,7 +34,9 @@
         }
       ],
       "compression": "maximum",
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     },
     "linux": {
       "target": [
@@ -53,5 +55,8 @@
   "homepage": "https://github.com/boyphongsakorn/rmuti_ess_jsapp#readme",
   "devDependencies": {
     "electron": "^6.1.12"
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.2-hotfix62"
   }
 }
