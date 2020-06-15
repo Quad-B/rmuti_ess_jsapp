@@ -31,6 +31,9 @@
         },
         {
           "target": "portable"
+        },
+        {
+          "target": "zip" 
         }
       ],
       "compression": "maximum",
