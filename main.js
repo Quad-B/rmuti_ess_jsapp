@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 
-process.env.GOOGLE_API_KEY = 'AIzaSyAVWxasjlmckeIuYTYudCUPBZ7JkhaClUk';
+process.env.GOOGLE_API_KEY = 'AIzaSyCKnojj634as24PXtBsL6KUGxEv53C4W4U';
 
 function createWindow () {
   // Create the browser window.
@@ -20,7 +20,7 @@ function createWindow () {
   win.loadFile('index.html')
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

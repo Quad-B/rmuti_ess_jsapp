@@ -42,7 +42,9 @@
         });
 
         function showPosition(position) {
-  
+
+            console.log(position.coords.longitude)
+            console.log(position.coords.latitude)
             $.getJSON("https://api.longdo.com/map/services/address?lon="+position.coords.longitude+"&lat="+position.coords.latitude+"&noelevation=1&key=dd60afa68aa84ff6eb5e4da05044eea4",function(json)
                 {     
                     x.innerHTML = position.coords.longitude;
